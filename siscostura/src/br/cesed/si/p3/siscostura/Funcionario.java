@@ -59,4 +59,13 @@ public final class Funcionario extends Pessoa {
 	public void setSalario(double salario) {
 		this.salario = salario;
 	}
+	
+	/**
+	 *  Metodo faz com que o conteúdo de cada campo seja colocado no retorno, com um campo por linha.
+	 */
+	@Override
+	public String toString() {
+		return "Funcionario [codigoFuncionario=" + codigoFuncionario + ", salario=" + salario + "]";
+	}
+
 }

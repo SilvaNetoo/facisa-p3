@@ -45,6 +45,9 @@ public class Main {
 
 			case 2:
 				
+				nome = JOptionPane.showInputDialog("Digite o nome do cliente");
+				loja.removerCliente(nome);		
+				JOptionPane.showMessageDialog(null, "Cliente removido!\nSegue lista de clientes: " + loja.getClientes());
 				break;
 
 			case 3:
@@ -64,9 +67,9 @@ public class Main {
 			case 4:
 				
 				//adicionar novo funcionário - input dos dados
-				nome = JOptionPane.showInputDialog("Digite o nome do cliente");
+				nome = JOptionPane.showInputDialog("Digite o nome do funcionario");
 
-				cpfStr = JOptionPane.showInputDialog("Digite o cpf do cliente");
+				cpfStr = JOptionPane.showInputDialog("Digite o cpf do funcionario");
 				cpf = Long.parseLong(cpfStr);
 			
 				String codigoFuncionarioStr = JOptionPane.showInputDialog("Digite o código do funcionário");
@@ -83,9 +86,22 @@ public class Main {
 				
 			case 5:
 				
+				nome = JOptionPane.showInputDialog("Digite o nome do funcionario");
+				loja.removerFuncionario(nome);
+				JOptionPane.showMessageDialog(null, "Funcionario removido!\nSegue lista de de funcionarios: " + loja.getFuncionarios());
 				break;
 				
 			case 6:
+				
+				List<Funcionario> funcionarios = loja.getFuncionarios();
+				
+				String nomeDosfuncionariosCadastrados = "";
+				
+				for (Funcionario funcionario : funcionarios) {
+					nomeDosfuncionariosCadastrados += "\n" + funcionario.getNome();
+				}
+				
+				JOptionPane.showMessageDialog(null, "Lista de FUncionarios: \n" + nomeDosfuncionariosCadastrados);
 				
 				break;
 				
