@@ -1,0 +1,5 @@
+package cesed.si.p3.siscostura.enumerations;
+
+public enum TipoServico {
+
+}

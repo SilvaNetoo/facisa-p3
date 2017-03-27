@@ -1,0 +1,42 @@
+/**
+ * Classe concreta do tipo Cliente, extendendo a classe abstrata Pessoa
+ * @author Neto
+ *
+ */
+public final class Cliente extends Pessoa {
+
+	private int codigoCliente;
+
+	/**
+	 * @param nome
+	 * @param cpf
+	 * @param codigoCliente
+	 */
+	public Cliente(String nome, long cpf, int codigoCliente) {
+		super(nome, cpf);
+		this.codigoCliente = codigoCliente;
+	}
+
+	
+	/**
+	 * Metodo retorna o valor da variavel codiigoCliente do tipo inteiro
+	 * @return codigoCliente retorna o codigo do cliente
+	 */
+	@Override
+	public int getId() {
+		return codigoCliente;
+	}
+
+	/* Duplicação de código
+	public int getCodigoCliente() {
+		return codigoCliente;
+	}*/
+
+	/**
+	 * Metodo altera o valor da variável codigoCliente do tipo inteiro
+	 * @param codigoCliente codigo do cliente
+	 */
+	public void setCodigoCliente(int codigoCliente) {
+		this.codigoCliente = codigoCliente;
+	}
+}

@@ -125,4 +125,4 @@ public class Pedido implements Identificavel {
 	public void setId(int id) {
 		this.id = id;
 	}
-}
+}	

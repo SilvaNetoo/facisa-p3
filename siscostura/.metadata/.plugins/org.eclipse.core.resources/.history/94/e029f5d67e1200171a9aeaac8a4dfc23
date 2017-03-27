@@ -1,0 +1,128 @@
+package br.cesed.si.p3.siscostura;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.cesed.si.p3.siscostura.enumerations.StatusPedido;
+
+/**
+ * Classe concreta do tipo Pedido, implementada pela classe identificável
+ * @author Neto
+ *
+ */
+public class Pedido implements Identificavel {
+
+	private int id;
+	private Cliente cliente;
+	private Funcionario funcionario;
+	private List<ItemPedido> listaItensPedido;
+	private StatusPedido statusPedido;
+	
+	/**
+	 * @param id
+	 * @param cliente
+	 * @param funcionario
+	 */
+	public Pedido(int id, Cliente cliente, Funcionario funcionario) {
+		this.id = id;
+		this.cliente = cliente;
+		this.funcionario = funcionario;
+		this.statusPedido = StatusPedido.NAO_INICIADO;
+		this.listaItensPedido = new ArrayList<ItemPedido>();
+	}
+
+	/**
+	 * Metodo adiciona o valor da variável itemPedido do tipo ItemPedido ao array listaItensPedidos
+	 * @param itemPedido item pedido
+	 */
+	public void adicionarItemPedido(ItemPedido itemPedido) {
+		this.listaItensPedido.add(itemPedido);
+	}
+
+	/**
+	 * Metodo soma os valores contidos no array itemPedido e retorna o valor total no tipo double
+	 * @return valorTotal retorna o valor total dos pedidos
+	 */
+	public double valorTotalPedido() {
+		
+		double valorTotal = 0;
+		
+		for (ItemPedido itemPedido : listaItensPedido) {
+			valorTotal += itemPedido.getValor();
+		}
+		
+		return valorTotal;
+	}
+
+	/**
+	 * Metodo retorna a variável cliente do tipo Cliente
+	 * @return cliente retorna cliente
+	 */
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	/**
+	 * Metodo altera o valor da variável cliente do tipo Cliente
+	 * @param cliente cliente
+	 */
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	/**
+	 * Metodo retorna o valor da variável funcionario do tipo Funcionario
+	 * @return funcionario retorna funcionario
+	 */
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	/**
+	 * Metodo altera o valor da variável funcionario do tipo FUncionario
+	 * @param funcionario funcionario
+	 */
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
+	/**
+	 * Metodo retorna os valores contidos no array listaItensPedido do tipo ItemPedido
+	 * @return listaItensPedido retorna lista de itens pedidos
+	 */
+	public List<ItemPedido> getListaItensPedido() {
+		return listaItensPedido;
+	}
+
+	/**
+	 * Metodo retorna o valor da variável statusPedido do tipo StatusPedido
+	 * @return statusPedido retorna o status do pedido
+	 */
+	public StatusPedido getStatusPedido() {
+		return statusPedido;
+	}
+
+	/**
+	 * Metodo altera o valor da variável statusPedido do tipo StatusPedido
+	 * @param statusPedido status do pedido
+	 */
+	public void setStatusPedido(StatusPedido statusPedido) {
+		this.statusPedido = statusPedido;
+	}
+	
+	/**
+	 * Metodo retorna o valor da variável id do tipo inteiro
+	 * @return id id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * Metodo altera o valor da variável id do tipo inteiro
+	 * @param id id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+}
